@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="model.DrinkEntity" %>
+<%
+//リクエストスコープに保存されたインスタンスを取得
+DrinkEntity drink =(DrinkEntity) request.getAttribute("drink");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +12,9 @@
 <title>リザルト画面</title>　
 </head>
 <body>
-
+<h1>水を最低でも</h1>
+<p><% drink.getMustWater(); %>ml飲みましょう</p>
+<a href="*">HOME</a>
+<a href="*">コラム</a>
 </body>
 </html>

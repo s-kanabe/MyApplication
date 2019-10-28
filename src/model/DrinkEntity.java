@@ -5,11 +5,13 @@ public class DrinkEntity {
 	private int id;
 	private String drinkName;
 	private double alcoholRate;
+	private double mustWater;
 
 	//ゲッター
 	public int getId() { return id;}
 	public String getDrinkName() { return drinkName;}
 	public double getAlcoholRate() { return alcoholRate;}
+	public double getMustWater() { return mustWater; }
 	
 	//セッター
 	public void setId(int id) {
@@ -20,5 +22,8 @@ public class DrinkEntity {
 	}
 	public void setAlcoholRate(double alcoholRate) {
 		this.alcoholRate = alcoholRate;
+	}
+	public void setMustWater(double mustWater) {
+		this.mustWater = mustWater;
 	}
 }

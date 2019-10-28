@@ -1,12 +1,12 @@
 package model;
-import java.util.List;
 
 public class CalculationLogic {
-	public void excute(List<DrinkEntity> drinkList, List<GlassEntity> glassList) { 
+	public double excute(double selectedRecordAlcoholRate, int selectedRecordAmount, int number) { 
 		//mustWaterを算出して設定
-		double alcoholRate = drinkList.get(0).getAlcoholRate();
-		int amount = glassList.get(0).getAmount();
+		double alcoholRate = selectedRecordAlcoholRate;
+		int amount = selectedRecordAmount * number;
 		double mustWater = (amount*amount*alcoholRate)/20.83-amount;
+		return mustWater;
 	}
 
 }
