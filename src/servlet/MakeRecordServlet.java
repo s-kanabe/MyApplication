@@ -1,15 +1,15 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException; 
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import java.util.List;
-import java.util.ArrayList;
 
 import dao.DrinkDAO;
 import dao.GlassDAO;
@@ -22,9 +22,16 @@ public class MakeRecordServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	throws ServletException, IOException {
+		//アプリケーションスコープを取得
+		ServletContext application = this.getServletContext();
+		
+		List<DrinkEntity> drinkList = (List<DrinkEntity>) application.getAttribute("drinkList");
+		List<GlassEntity> glassList = (List<GlassEntity>) application.getAttribute("glassList");
 		
 		//アプリケーションスコープに酒と量のListが入っていないかをチェックし、入っていればスルー
-		if( !=null) {
+		if( application.getAttribute("drinkList")!= null) {
+			
+		}else if() {
 			
 		}
 		
@@ -32,11 +39,13 @@ public class MakeRecordServlet extends HttpServlet {
 		DrinkDAO drinkDAO = new DrinkDAO();
 		GlassDAO glassDAO = new GlassDAO();
 		
-		List<DrinkEntity> drinkList = drinkDAO.findAll();
-		List<GlassEntity> glassList = glassDAO.findAll();
+		drinkList = drinkDAO.findAll();
+		glassList = glassDAO.findAll();
+		
 		
 		//アプリケーションスコープにレコードを保存
-		
+		application.setAttribute("drinkList", drinkList);
+		application.setAttribute("glassList", glassList);
 		
 		//計算ページのjspにフォワードさせる。
 		RequestDispatcher dispatcher = request.getRequestDispatcher("");    //フォワード先を入力
