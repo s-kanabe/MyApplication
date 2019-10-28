@@ -16,6 +16,7 @@ import dao.GlassDAO;
 import model.CalculationLogic;
 import model.DrinkEntity;
 import model.GlassEntity;
+import model.RegisterMustWater;
 
 @WebServlet("/CalculationServlet")
 public class CalculationServlet extends HttpServlet {
@@ -70,9 +71,9 @@ public class CalculationServlet extends HttpServlet {
 		double mustWater = logic.excute(selectedRecordAlcoholRate,selectedRecordAmount,number);
 		
 		//計算結果をリクエストスコープに保存
-		DrinkEntity drink = new DrinkEntity();
-		drink.setMustWater(mustWater);
-		request.setAttribute("drink", drink);
+		RegisterMustWater registerMustWater =  new RegisterMustWater();
+		registerMustWater.setMustWater(mustWater);
+		request.setAttribute("registerMustWater", registerMustWater);
 		
 		//フォワード
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
