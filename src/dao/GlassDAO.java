@@ -14,9 +14,9 @@ public class GlassDAO {
 	middleGlass.setGlassname("中ジョッキ");
 	middleGlass.setAmount(300);
 
-	middleGlass.setId(2);  
-	middleGlass.setGlassname("ワイングラス");
-	middleGlass.setAmount(100);
+	wineGlass.setId(2);  
+	wineGlass.setGlassname("ワイングラス");
+	wineGlass.setAmount(100);
 
 	//Listに各レコードを格納
 	List<GlassEntity> glassList = new ArrayList<GlassEntity>();

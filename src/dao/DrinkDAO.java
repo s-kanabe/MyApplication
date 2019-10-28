@@ -23,4 +23,8 @@ public class DrinkDAO {
 	drinkList.add(beer);
 	drinkList.add(wine);
 	
+	public List<DrinkEntity> fidAll() {
+		return drinkList;
+	}
+	
 }
