@@ -18,7 +18,7 @@ public class MakeRecordServlet extends HttpServlet {
 		
 		//アプリケーションスコープに酒と量のListが入っていないかをチェックし、（nullかどうか）入っていればスルー
 		if( !=null) {
-			throw;
+			
 		}
 		
 		//入っていなければ、酒と量のDAOのfindAllメソッドをそれぞれ実行して、戻ったListをセットする。

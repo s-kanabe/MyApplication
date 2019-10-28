@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class DrinkDAO {
-	//各レコードとなるDrinkEntityのインスタンスを生成 
+	//各レコードとなるDrinkEntityのインスタンスを生成
 	DrinkEntity beer = new DrinkEntity();
 	DrinkEntity wine = new DrinkEntity();
 	
