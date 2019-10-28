@@ -20,7 +20,7 @@
 <form action="/sakeManagement/CalculationServlet" method="post">
 <!-- ドリンクの名前とアルコール濃度をレコードごとに表示。POSTする値はレコードのID -->
 <select name="selectedDrink">
-<% for(int i=0 ; i<drinkList.length(); i++){ %>	
+<% for(int i=0 ; i<drinkList.size(); i++){ %>	
 	<option value="<% drinkList.get(i).getId(); %>">
 	<%= drinkList.get(i).getDrinkName() + "：" + drinkList.get(i).getAlcoholRate() %>
 	</option>
@@ -29,7 +29,7 @@
 
 <!-- グラスの名前と容量をレコードごとに表示。POSTする値はレコードのID -->
 <select name="selectedGlass">
-<% for(int i=0 ; i<glassList.length(); i++){ %>	
+<% for(int i=0 ; i<glassList.size(); i++){ %>	
 	<option value="<% glassList.get(i).getId(); %>">
 	<%= glassList.get(i).getGlassName() + "：" + glassList.get(i).getAmount() %>
 	</option>
