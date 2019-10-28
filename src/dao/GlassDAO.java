@@ -22,5 +22,9 @@ public class GlassDAO {
 	List<GlassEntity> glassList = new ArrayList<GlassEntity>();
 	glassList.add(middleGlass);
 	glassList.add(wineGlass);
+	
+	public List<GlassEntity> findAll() {
+		return glassList;
+	}
 		
 }
