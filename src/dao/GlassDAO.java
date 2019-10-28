@@ -9,7 +9,7 @@ public class GlassDAO {
 	GlassEntity middleGlass = new GlassEntity();
 	GlassEntity wineGlass = new GlassEntity();
 	
-	//セッターで中ジョッキレコード・ワイングラスレコードの値を設定 
+	//セッターで中ジョッキレコード・ワイングラスレコードの値を設定
 	middleGlass.setId(1);  
 	middleGlass.setGlassname("中ジョッキ");
 	middleGlass.setAmount(300);
