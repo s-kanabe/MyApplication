@@ -1,5 +1,6 @@
 package model;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class CalculationLogic {
 	public double excute(double selectedRecordAlcoholRate, int selectedRecordAmount, int number) { 
@@ -12,16 +13,19 @@ public class CalculationLogic {
 		BigDecimal bdAmount = bdSelectedAmount.multiply (bdNumber);
 		BigDecimal a = BigDecimal.valueOf(20.83);
 		
-		//計算：amount*amount*alcoholRate)/20.83-amount
+		//計算：(amount*amount*alcoholRate)/20.83-amount
 		BigDecimal result = bdAmount.multiply(bdAmount.multiply(bdSelectedAlcoholRate));
-		BigDecimal result1 = result.divide(a);
+		BigDecimal result1 = result.divide(a,2,RoundingMode.HALF_UP);
 		BigDecimal result2 = result1.subtract(bdAmount);
-		
-		//値の整理
-//		BigDecimal finalResult = result2.setScale(0,BigDecimal.ROUND_HALF_UP);
+
 		
 		double mustWater = result2.doubleValue();
-		mustWater = Math.round(mustWater);
+		
+		if(mustWater <0 ) {
+			mustWater = 0;
+		}
+		
+		//
 		
 		return mustWater;
 	}
