@@ -13,7 +13,7 @@ RegisterMustWater registerMustWater =(RegisterMustWater) request.getAttribute("r
 </head>
 <body>
 <h1>水を最低でも</h1>
-<p><% registerMustWater.getMustWater(); %>ml飲みましょう</p>
+<p><%= registerMustWater.getMustWater() %>ml飲みましょう</p>
 <a href="*">HOME</a>
 <a href="*">コラム</a>
 </body>

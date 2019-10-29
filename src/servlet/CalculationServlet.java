@@ -53,7 +53,7 @@ public class CalculationServlet extends HttpServlet {
 	throws ServletException, IOException {
 		//リクエストパラメータを取得
 		String selectedDrinkId = request.getParameter("selectedDrink"); 
-		String selectedGlassId = request.getParameter("selectedglass");
+		String selectedGlassId = request.getParameter("selectedGlass");
 		String selectedNumber = request.getParameter("number");
 		
 		//アプリケーションスコープからListを取得
