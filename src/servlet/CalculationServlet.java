@@ -44,7 +44,7 @@ public class CalculationServlet extends HttpServlet {
 		}
 						
 		//計算ページのjspにフォワードさせる。
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/select.jsp");    //フォワード先を入力
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/select.jsp");
 		dispatcher.forward(request,  response);
 	}
 	
@@ -52,8 +52,8 @@ public class CalculationServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 	throws ServletException, IOException {
 		//リクエストパラメータを取得
-		String selectedDrinkId = request.getParameter("selectedDrink");   //1 
-		String selectedGlassId = request.getParameter("selectedglass");   //1
+		String selectedDrinkId = request.getParameter("selectedDrink"); 
+		String selectedGlassId = request.getParameter("selectedglass");
 		String selectedNumber = request.getParameter("number");
 		
 		//アプリケーションスコープからListを取得
